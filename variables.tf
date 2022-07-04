@@ -3,15 +3,20 @@ variable "domain_name" {
   type        = string
 }
 
-variable "alternate_domain_names" {
-  description = "List of alternate domain names for the website, e.g. www.example.com"
-  type        = list(string)
-  default     = []
+variable "website_content_directory_path" {
+  description = "Path to the directory containing the website content"
+  type        = string
 }
 
 variable "hosted_zone_id" {
   description = "Route53 hosted zone ID in which to create DNS records for the website"
   type        = string
+}
+
+variable "alternate_domain_names" {
+  description = "List of alternate domain names for the website, e.g. www.example.com"
+  type        = list(string)
+  default     = []
 }
 
 variable "content_security_policy" {
